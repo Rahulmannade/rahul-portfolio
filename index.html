@@ -1,0 +1,877 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rahul Mannade portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <meta
+      name="description"
+      content="Portfolio of Rahul Mannade, a BCA student and aspiring software engineer specializing in web development and programming."
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Vanilla Tilt -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+  </head>
+  <body
+    class="bg-slate-50 text-slate-800 dark:bg-darker dark:text-slate-200 theme-transition font-sans antialiased overflow-x-hidden"
+  >
+    <!-- Custom Cursor -->
+    <div class="custom-cursor hidden md:block"></div>
+    <div class="custom-cursor-dot hidden md:block"></div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="progress-bar"></div>
+
+    <!-- Navigation -->
+    <nav
+      id="navbar"
+      class="fixed w-full z-50 transition-all duration-500 bg-white/70 dark:bg-dark/70 backdrop-blur-xl border-b border-slate-200/50 dark:border-slate-800/50"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <div
+            class="flex-shrink-0 flex items-center cursor-pointer magnetic-btn"
+            onclick="window.scrollTo(0, 0)"
+          >
+            <span
+              class="text-2xl font-bold tracking-tighter text-gradient font-display"
+              >RM.</span
+            >
+          </div>
+
+          <div class="hidden md:flex items-center space-x-8">
+            <a
+              href="#home"
+              class="nav-link text-sm font-medium hover-underline magnetic-btn"
+              >Home</a
+            >
+            <a
+              href="#about"
+              class="nav-link text-sm font-medium hover-underline magnetic-btn"
+              >About</a
+            >
+            <a
+              href="#skills"
+              class="nav-link text-sm font-medium hover-underline magnetic-btn"
+              >Skills</a
+            >
+            <a
+              href="#projects"
+              class="nav-link text-sm font-medium hover-underline magnetic-btn"
+              >Projects</a
+            >
+            <a
+              href="#blog"
+              class="nav-link text-sm font-medium hover:text-primary transition-colors magnetic-btn"
+              >Blog</a
+            >
+            <a
+              href="#contact"
+              class="nav-link text-sm font-medium hover-underline magnetic-btn"
+              >Contact</a
+            >
+
+            <button
+              id="theme-toggle"
+              class="magnetic-btn p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-all duration-500 focus:outline-none"
+            >
+              <i
+                class="fas fa-moon text-slate-600 dark:text-slate-300 transition-transform duration-500"
+                id="theme-icon"
+              ></i>
+            </button>
+          </div>
+
+          <div class="md:hidden flex items-center">
+            <button
+              id="mobile-menu-btn"
+              class="text-slate-600 dark:text-slate-300 hover:text-primary focus:outline-none"
+            >
+              <i class="fas fa-bars text-2xl"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div id="mobile-menu" class="hidden md:hidden glass absolute w-full">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <a
+            href="#home"
+            class="mobile-link block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-800"
+            >Home</a
+          >
+          <a
+            href="#about"
+            class="mobile-link block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-800"
+            >About</a
+          >
+          <a
+            href="#skills"
+            class="mobile-link block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-800"
+            >Skills</a
+          >
+          <a
+            href="#projects"
+            class="mobile-link block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-800"
+            >Projects</a
+          >
+          <a
+            href="#contact"
+            class="mobile-link block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-800"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      id="home"
+      class="min-h-screen flex items-center justify-center relative pt-16 overflow-hidden"
+    >
+      <!-- Animated Mesh Gradient Background -->
+      <div
+        class="absolute inset-0 mesh-gradient opacity-30 dark:opacity-20"
+      ></div>
+
+      <!-- Floating Elements -->
+      <div
+        class="absolute top-20 left-10 w-20 h-20 bg-primary/20 rounded-full blur-xl animate-float"
+      ></div>
+      <div
+        class="absolute bottom-20 right-10 w-32 h-32 bg-secondary/20 rounded-full blur-xl animate-float"
+        style="animation-delay: 2s"
+      ></div>
+      <div
+        class="absolute top-1/2 left-1/4 w-16 h-16 bg-pink-500/20 rounded-full blur-xl animate-float"
+        style="animation-delay: 4s"
+      ></div>
+
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center"
+      >
+        <div class="hero-content">
+          <p
+            class="text-primary font-semibold tracking-widest uppercase mb-4 text-sm"
+          >
+            Hello, I am
+          </p>
+
+          <h1
+            class="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight mb-6 font-display"
+          >
+            <span class="scramble-text text-gradient">Rahul Mannade</span>
+          </h1>
+
+          <div class="h-12 mb-8">
+            <span
+              id="typewriter"
+              class="text-xl md:text-3xl text-slate-600 dark:text-slate-400 font-light font-display"
+            ></span>
+            <span class="animate-pulse text-primary">|</span>
+          </div>
+
+          <div class="flex flex-col sm:flex-row justify-center gap-4 mt-8">
+            <a
+              href="#projects"
+              class="magnetic-btn px-8 py-4 rounded-full bg-primary text-white font-semibold shadow-lg shadow-indigo-500/30 hover:shadow-indigo-500/50 transition-all transform hover:-translate-y-1 glow-hover"
+            >
+              View Projects
+            </a>
+            <a
+              href="#contact"
+              class="magnetic-btn px-8 py-4 rounded-full border-2 border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 font-semibold hover:border-primary hover:text-primary dark:hover:border-primary dark:hover:text-primary transition-all transform hover:-translate-y-1"
+            >
+              Contact Me
+            </a>
+          </div>
+
+          <div class="mt-12 flex justify-center space-x-8">
+            <a
+              href="https://github.com/Rahulmannade"
+              target="_blank"
+              class="magnetic-btn text-slate-400 hover:text-primary transition-all duration-300 text-2xl hover:scale-110"
+            >
+              <i class="fab fa-github"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/rahul-mannade-a54242386"
+              target="_blank"
+              class="magnetic-btn text-slate-400 hover:text-primary transition-all duration-300 text-2xl hover:scale-110"
+            >
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a
+              href="mailto:manishmannade09@gmail.com"
+              class="magnetic-btn text-slate-400 hover:text-primary transition-all duration-300 text-2xl hover:scale-110"
+            >
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce"
+      >
+        <a
+          href="#about"
+          class="text-slate-400 hover:text-primary transition-colors"
+        >
+          <i class="fas fa-chevron-down text-2xl"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white dark:bg-dark theme-transition">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 gs-reveal">
+          <h2 class="text-3xl md:text-5xl font-bold mb-4 font-display">
+            About <span class="text-gradient">Me</span>
+          </h2>
+          <div
+            class="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"
+          ></div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div class="gs-reveal-left">
+            <div class="relative group">
+              <div
+                class="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-2xl transform rotate-3 opacity-20 group-hover:rotate-6 transition-transform duration-500"
+              ></div>
+              <img
+                src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                alt="Coding Workspace"
+                class="relative rounded-2xl shadow-2xl w-full object-cover h-80 md:h-96 transform transition-transform duration-500 group-hover:scale-[1.02]"
+              />
+            </div>
+          </div>
+
+          <div class="gs-reveal-right space-y-6">
+            <h3
+              class="text-2xl md:text-3xl font-bold text-slate-800 dark:text-white font-display"
+            >
+              I'm a <span class="text-primary">BCA Student</span> passionate
+              about building things for the web.
+            </h3>
+            <p
+              class="text-slate-600 dark:text-slate-400 leading-relaxed text-lg"
+            >
+              Currently pursuing my Bachelor of Computer Applications (4th
+              Semester), I have a strong foundation in computer science
+              principles and a keen interest in software engineering. I enjoy
+              the challenge of turning complex problems into simple, beautiful
+              interface designs.
+            </p>
+            <p
+              class="text-slate-600 dark:text-slate-400 leading-relaxed text-lg"
+            >
+              When I'm not coding, you'll find me exploring new technologies,
+              contributing to open-source projects, or refining my
+              problem-solving skills on various coding platforms.
+            </p>
+
+            <div class="grid grid-cols-2 gap-4 pt-4">
+              <div
+                class="p-6 bg-slate-50 dark:bg-slate-800 rounded-xl border-l-4 border-primary transform transition-all duration-300 hover:translate-x-2 hover:shadow-lg"
+              >
+                <h4 class="font-bold text-slate-800 dark:text-white text-lg">
+                  Education
+                </h4>
+                <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">
+                  BCA - 4th Semester
+                </p>
+              </div>
+              <div
+                class="p-6 bg-slate-50 dark:bg-slate-800 rounded-xl border-l-4 border-secondary transform transition-all duration-300 hover:translate-x-2 hover:shadow-lg"
+              >
+                <h4 class="font-bold text-slate-800 dark:text-white text-lg">
+                  Focus
+                </h4>
+                <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">
+                  Web Dev & DSA
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section
+      id="skills"
+      class="py-20 bg-slate-50 dark:bg-darker theme-transition"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 gs-reveal">
+          <h2 class="text-3xl md:text-5xl font-bold mb-4 font-display">
+            Technical <span class="text-gradient">Skills</span>
+          </h2>
+          <div
+            class="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"
+          ></div>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Skill Card 1 -->
+          <div
+            class="bg-white dark:bg-dark p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 gs-reveal border border-slate-100 dark:border-slate-800 group hover:-translate-y-2"
+          >
+            <div class="flex items-center mb-6">
+              <div
+                class="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white mr-4 shadow-lg group-hover:scale-110 transition-transform duration-300"
+              >
+                <i class="fas fa-code text-2xl"></i>
+              </div>
+              <h3 class="text-xl font-bold font-display">Languages</h3>
+            </div>
+            <div class="flex flex-wrap gap-3 mt-4">
+              <span
+                class="px-4 py-2 bg-slate-100 dark:bg-slate-800 rounded-full text-sm text-slate-600 dark:text-slate-300 hover:bg-primary hover:text-white transition-all duration-300 cursor-default"
+                >C/CPP</span
+              >
+              <span
+                class="px-4 py-2 bg-slate-100 dark:bg-slate-800 rounded-full text-sm text-slate-600 dark:text-slate-300 hover:bg-primary hover:text-white transition-all duration-300 cursor-default"
+                >JAVA</span
+              >
+              <span
+                class="px-4 py-2 bg-slate-100 dark:bg-slate-800 rounded-full text-sm text-slate-600 dark:text-slate-300 hover:bg-primary hover:text-white transition-all duration-300 cursor-default"
+                >PYTHON</span
+              >
+              <span
+                class="px-4 py-2 bg-slate-100 dark:bg-slate-800 rounded-full text-sm text-slate-600 dark:text-slate-300 hover:bg-primary hover:text-white transition-all duration-300 cursor-default"
+                >JavaScript</span
+              >
+              <span
+                class="px-4 py-2 bg-slate-100 dark:bg-slate-800 rounded-full text-sm text-slate-600 dark:text-slate-300 hover:bg-primary hover:text-white transition-all duration-300 cursor-default"
+                >PHP</span
+              >
+            </div>
+          </div>
+
+          <!-- Skill Card 2 -->
+          <div
+            class="bg-white dark:bg-dark p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 gs-reveal border border-slate-100 dark:border-slate-800 group hover:-translate-y-2"
+          >
+            <div class="flex items-center mb-6">
+              <div
+                class="w-14 h-14 rounded-2xl bg-gradient-to-br from-yellow-500 to-yellow-600 flex items-center justify-center text-white mr-4 shadow-lg group-hover:scale-110 transition-transform duration-300"
+              >
+                <i class="fas fa-laptop-code text-2xl"></i>
+              </div>
+              <h3 class="text-xl font-bold font-display">Web Development</h3>
+            </div>
+            <div class="flex flex-wrap gap-3 mt-4">
+              <span
+                class="px-4 py-2 bg-slate-100 dark:bg-slate-800 rounded-full text-sm text-slate-600 dark:text-slate-300 hover:bg-primary hover:text-white transition-all duration-300 cursor-default"
+                >HTML</span
+              >
+              <span
+                class="px-4 py-2 bg-slate-100 dark:bg-slate-800 rounded-full text-sm text-slate-600 dark:text-slate-300 hover:bg-primary hover:text-white transition-all duration-300 cursor-default"
+                >CSS</span
+              >
+              <span
+                class="px-4 py-2 bg-slate-100 dark:bg-slate-800 rounded-full text-sm text-slate-600 dark:text-slate-300 hover:bg-primary hover:text-white transition-all duration-300 cursor-default"
+                >DBMS</span
+              >
+            </div>
+          </div>
+          <!-- Skill Card 3 -->
+          <div
+            class="bg-white dark:bg-dark p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 gs-reveal border border-slate-100 dark:border-slate-800 group hover:-translate-y-2"
+          >
+            <div class="flex items-center mb-6">
+              <div
+                class="w-14 h-14 rounded-2xl bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center text-white mr-4 shadow-lg group-hover:scale-110 transition-transform duration-300"
+              >
+                <i class="fas fa-tools text-2xl"></i>
+              </div>
+              <h3 class="text-xl font-bold font-display">Tools & IT</h3>
+            </div>
+            <div class="flex flex-wrap gap-3 mt-4">
+              <span
+                class="px-4 py-2 bg-slate-100 dark:bg-slate-800 rounded-full text-sm text-slate-600 dark:text-slate-300 hover:bg-primary hover:text-white transition-all duration-300 cursor-default"
+                >VS Code</span
+              >
+              <span
+                class="px-4 py-2 bg-slate-100 dark:bg-slate-800 rounded-full text-sm text-slate-600 dark:text-slate-300 hover:bg-primary hover:text-white transition-all duration-300 cursor-default"
+                >MS Office</span
+              >
+              <span
+                class="px-4 py-2 bg-slate-100 dark:bg-slate-800 rounded-full text-sm text-slate-600 dark:text-slate-300 hover:bg-primary hover:text-white transition-all duration-300 cursor-default"
+                >Linux Basics</span
+              >
+              <span
+                class="px-4 py-2 bg-slate-100 dark:bg-slate-800 rounded-full text-sm text-slate-600 dark:text-slate-300 hover:bg-primary hover:text-white transition-all duration-300 cursor-default"
+                >Troubleshooting</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white dark:bg-dark theme-transition">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 gs-reveal">
+          <h2 class="text-3xl md:text-5xl font-bold mb-4 font-display">
+            Featured <span class="text-gradient">Projects</span>
+          </h2>
+          <div
+            class="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"
+          ></div>
+          <p class="mt-4 text-slate-600 dark:text-slate-400">
+            A selection of my recent work and learning experiments.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Project 1 -->
+          <div
+            class="project-card bg-slate-50 dark:bg-slate-800 rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-700 gs-reveal group"
+            data-tilt
+          >
+            <div
+              class="h-56 bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center relative overflow-hidden"
+            >
+              <i
+                class="fas fa-user-circle text-7xl text-white/30 group-hover:scale-110 transition-transform duration-500"
+              ></i>
+              <div
+                class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4 backdrop-blur-sm"
+              >
+                <a
+                  href="#"
+                  class="magnetic-btn p-3 bg-white rounded-full text-slate-900 hover:text-primary transition-all hover:scale-110"
+                >
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+                <a
+                  href="https://github.com/Rahulmannade"
+                  target="_blank"
+                  class="magnetic-btn p-3 bg-white rounded-full text-slate-900 hover:text-primary transition-all hover:scale-110"
+                >
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3
+                class="text-xl font-bold mb-2 text-slate-800 dark:text-white font-display"
+              >
+                Personal Portfolio
+              </h3>
+              <p class="text-slate-600 dark:text-slate-400 text-sm mb-4">
+                A responsive portfolio website built with HTML, Tailwind CSS,
+                and JavaScript to showcase my skills and projects.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="px-3 py-1 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 text-xs rounded-full font-medium"
+                  >HTML</span
+                >
+                <span
+                  class="px-3 py-1 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 text-xs rounded-full font-medium"
+                  >Tailwind</span
+                >
+                <span
+                  class="px-3 py-1 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 text-xs rounded-full font-medium"
+                  >JS</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div
+            class="project-card bg-slate-50 dark:bg-slate-800 rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-700 gs-reveal group"
+            data-tilt
+          >
+            <div
+              class="h-56 bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center relative overflow-hidden"
+            >
+              <i
+                class="fas fa-tasks text-7xl text-white/30 group-hover:scale-110 transition-transform duration-500"
+              ></i>
+              <div
+                class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4 backdrop-blur-sm"
+              >
+                <a
+                  href="#"
+                  class="magnetic-btn p-3 bg-white rounded-full text-slate-900 hover:text-primary transition-all hover:scale-110"
+                >
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+                <a
+                  href="https://github.com/Rahulmannade"
+                  target="_blank"
+                  class="magnetic-btn p-3 bg-white rounded-full text-slate-900 hover:text-primary transition-all hover:scale-110"
+                >
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3
+                class="text-xl font-bold mb-2 text-slate-800 dark:text-white font-display"
+              >
+                Task Management App
+              </h3>
+              <p class="text-slate-600 dark:text-slate-400 text-sm mb-4">
+                A CRUD application for managing daily tasks. Features include
+                adding, deleting, and marking tasks as complete.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="px-3 py-1 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 text-xs rounded-full font-medium"
+                  >JavaScript</span
+                >
+                <span
+                  class="px-3 py-1 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 text-xs rounded-full font-medium"
+                  >LocalStorage</span
+                >
+                <span
+                  class="px-3 py-1 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 text-xs rounded-full font-medium"
+                  >CSS</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div
+            class="project-card bg-slate-50 dark:bg-slate-800 rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-700 gs-reveal group"
+            data-tilt
+          >
+            <div
+              class="h-56 bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center relative overflow-hidden"
+            >
+              <i
+                class="fas fa-calculator text-7xl text-white/30 group-hover:scale-110 transition-transform duration-500"
+              ></i>
+              <div
+                class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4 backdrop-blur-sm"
+              >
+                <a
+                  href="#"
+                  class="magnetic-btn p-3 bg-white rounded-full text-slate-900 hover:text-primary transition-all hover:scale-110"
+                >
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+                <a
+                  href="https://github.com/Rahulmannade"
+                  target="_blank"
+                  class="magnetic-btn p-3 bg-white rounded-full text-slate-900 hover:text-primary transition-all hover:scale-110"
+                >
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3
+                class="text-xl font-bold mb-2 text-slate-800 dark:text-white font-display"
+              >
+                Student Result Portal
+              </h3>
+              <p class="text-slate-600 dark:text-slate-400 text-sm mb-4">
+                A backend-focused project using PHP and MySQL to manage student
+                records, calculate grades, and display results securely.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="px-3 py-1 bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 text-xs rounded-full font-medium"
+                  >PHP</span
+                >
+                <span
+                  class="px-3 py-1 bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 text-xs rounded-full font-medium"
+                  >MySQL</span
+                >
+                <span
+                  class="px-3 py-1 bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 text-xs rounded-full font-medium"
+                  >Bootstrap</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-12 gs-reveal">
+          <a
+            href="https://github.com/Rahulmannade"
+            target="_blank"
+            class="magnetic-btn inline-flex items-center px-8 py-4 border-2 border-slate-300 dark:border-slate-600 rounded-full text-slate-700 dark:text-slate-300 hover:bg-primary hover:border-primary hover:text-white transition-all duration-300"
+          >
+            <i class="fab fa-github mr-2"></i> View More on GitHub
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- Resume Section -->
+    <section
+      id="resume"
+      class="py-20 bg-slate-50 dark:bg-darker theme-transition"
+    >
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center gs-reveal">
+        <h2 class="text-3xl md:text-5xl font-bold mb-6 font-display">
+          My <span class="text-gradient">Resume</span>
+        </h2>
+        <p class="text-slate-600 dark:text-slate-400 mb-8">
+          Looking for a comprehensive overview of my skills and experience?
+          Download my resume below.
+        </p>
+
+        <div
+          class="bg-white dark:bg-dark p-8 rounded-2xl shadow-2xl border border-slate-100 dark:border-slate-800 flex flex-col md:flex-row items-center justify-between gap-6 hover:shadow-primary/20 transition-shadow duration-500"
+        >
+          <div class="flex items-center gap-4">
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center text-white shadow-lg"
+            >
+              <i class="fas fa-file-pdf text-3xl"></i>
+            </div>
+            <div class="text-left">
+              <h3 class="text-lg font-bold text-slate-800 dark:text-white">
+                Rahul_Mannade_Resume.pdf
+              </h3>
+              <p class="text-sm text-slate-500 dark:text-slate-400">
+                Last updated: Feb 2026
+              </p>
+            </div>
+          </div>
+          <a
+            href="#"
+            class="magnetic-btn px-8 py-4 bg-gradient-to-r from-primary to-indigo-600 hover:from-indigo-600 hover:to-primary text-white font-semibold rounded-full shadow-lg shadow-indigo-500/30 transition-all transform hover:-translate-y-1 flex items-center"
+          >
+            <i class="fas fa-download mr-2"></i> Download CV
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white dark:bg-dark theme-transition">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-2 gap-12">
+          <div class="gs-reveal-left">
+            <h2 class="text-3xl md:text-5xl font-bold mb-6 font-display">
+              Let's Work <span class="text-gradient">Together</span>
+            </h2>
+            <p class="text-slate-600 dark:text-slate-400 mb-8 text-lg">
+              Have an Android project in mind or want to collaborate? I'm
+              currently open to new opportunities and freelance work.
+            </p>
+
+            <div class="space-y-6">
+              <div class="flex items-start group">
+                <div
+                  class="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-indigo-600 flex items-center justify-center text-white mr-4 flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300"
+                >
+                  <i class="fas fa-envelope text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="text-lg font-bold text-slate-800 dark:text-white">
+                    Email
+                  </h4>
+                  <a
+                    href="mailto:manishmannade09@gmail.com"
+                    class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors"
+                    >manishmannade09@gmail.com</a
+                  >
+                </div>
+              </div>
+
+              <div class="flex items-start group">
+                <div
+                  class="w-14 h-14 rounded-2xl bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center text-white mr-4 flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300"
+                >
+                  <i class="fab fa-whatsapp text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="text-lg font-bold text-slate-800 dark:text-white">
+                    WhatsApp
+                  </h4>
+                  <a
+                    href="https://wa.me/919244003098"
+                    target="_blank"
+                    class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors"
+                    >+91 92440 03098</a
+                  >
+                </div>
+              </div>
+
+              <div class="flex items-start group">
+                <div
+                  class="w-14 h-14 rounded-2xl bg-gradient-to-br from-sky-500 to-blue-600 flex items-center justify-center text-white mr-4 flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300"
+                >
+                  <i class="fab fa-telegram text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="text-lg font-bold text-slate-800 dark:text-white">
+                    Telegram
+                  </h4>
+                  <a
+                    href="https://t.me/rahulmannade"
+                    target="_blank"
+                    class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors"
+                    >@rahulmannade</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="mt-10 flex space-x-4">
+              <a
+                href="https://github.com/Rahulmannade"
+                target="_blank"
+                class="magnetic-btn w-12 h-12 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:bg-primary hover:text-white transition-all duration-300 text-xl"
+                aria-label="GitHub"
+              >
+                <i class="fab fa-github"></i>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/rahul-mannade-a54242386"
+                target="_blank"
+                class="magnetic-btn w-12 h-12 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:bg-primary hover:text-white transition-all duration-300 text-xl"
+                aria-label="LinkedIn"
+              >
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a
+                href="https://www.hackerrank.com/profile/manishmannade09"
+                target="_blank"
+                class="magnetic-btn w-12 h-12 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:bg-primary hover:text-white transition-all duration-300 text-xl"
+                aria-label="LeetCode"
+              >
+                <i class="fas fa-code"></i>
+              </a>
+              <a
+                href="https://www.hackerrank.com/rahulmannade"
+                target="_blank"
+                class="magnetic-btn w-12 h-12 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:bg-primary hover:text-white transition-all duration-300 text-xl"
+                aria-label="HackerRank"
+              >
+                <i class="fab fa-hackerrank"></i>
+              </a>
+            </div>
+          </div>
+
+          <div
+            class="bg-slate-50 dark:bg-slate-800 p-8 rounded-2xl shadow-2xl gs-reveal-right border border-slate-100 dark:border-slate-700"
+          >
+            <h3 class="text-2xl font-bold mb-6 text-slate-800 dark:text-white">
+              Send Message
+            </h3>
+            <form id="contact-form" class="space-y-6">
+              <div class="relative">
+                <input
+                  type="text"
+                  id="name"
+                  class="peer w-full px-4 py-4 rounded-xl bg-white dark:bg-slate-900 border-2 border-slate-200 dark:border-slate-700 focus:border-primary focus:outline-none transition-all placeholder-transparent"
+                  placeholder="Name"
+                  required
+                />
+                <label
+                  for="name"
+                  class="absolute left-4 -top-2.5 bg-slate-50 dark:bg-slate-800 px-2 text-sm text-slate-500 transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:bg-transparent peer-focus:-top-2.5 peer-focus:text-sm peer-focus:bg-slate-50 dark:peer-focus:bg-slate-800 peer-focus:text-primary"
+                  >Name</label
+                >
+              </div>
+              <div class="relative">
+                <input
+                  type="email"
+                  id="email"
+                  class="peer w-full px-4 py-4 rounded-xl bg-white dark:bg-slate-900 border-2 border-slate-200 dark:border-slate-700 focus:border-primary focus:outline-none transition-all placeholder-transparent"
+                  placeholder="Email"
+                  required
+                />
+                <label
+                  for="email"
+                  class="absolute left-4 -top-2.5 bg-slate-50 dark:bg-slate-800 px-2 text-sm text-slate-500 transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:bg-transparent peer-focus:-top-2.5 peer-focus:text-sm peer-focus:bg-slate-50 dark:peer-focus:bg-slate-800 peer-focus:text-primary"
+                  >Email</label
+                >
+              </div>
+              <div class="relative">
+                <select
+                  id="subject"
+                  class="peer w-full px-4 py-4 rounded-xl bg-white dark:bg-slate-900 border-2 border-slate-200 dark:border-slate-700 focus:border-primary focus:outline-none transition-all text-slate-600 dark:text-slate-400"
+                >
+                  <option value="">Select Subject</option>
+
+                  <option value="web">Web Development</option>
+                  <option value="collab">Collaboration</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div class="relative">
+                <textarea
+                  id="message"
+                  rows="4"
+                  class="peer w-full px-4 py-4 rounded-xl bg-white dark:bg-slate-900 border-2 border-slate-200 dark:border-slate-700 focus:border-primary focus:outline-none transition-all placeholder-transparent resize-none"
+                  placeholder="Message"
+                  required
+                ></textarea>
+                <label
+                  for="message"
+                  class="absolute left-4 -top-2.5 bg-slate-50 dark:bg-slate-800 px-2 text-sm text-slate-500 transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:bg-transparent peer-focus:-top-2.5 peer-focus:text-sm peer-focus:bg-slate-50 dark:peer-focus:bg-slate-800 peer-focus:text-primary"
+                  >Message</label
+                >
+              </div>
+              <button
+                type="submit"
+                class="magnetic-btn w-full py-4 px-6 rounded-xl bg-gradient-to-r from-primary to-indigo-600 hover:from-indigo-600 hover:to-primary text-white font-bold shadow-lg shadow-indigo-500/30 transition-all transform hover:-translate-y-1"
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+      class="bg-slate-50 dark:bg-darker py-8 border-t border-slate-200 dark:border-slate-800 theme-transition"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center"
+      >
+        <div class="mb-4 md:mb-0">
+          <span class="text-2xl font-bold text-gradient font-display">RM.</span>
+          <span class="ml-2 text-slate-500 dark:text-slate-400 text-sm"
+            >© 2026 Rahul Mannade. All rights reserved.</span
+          >
+        </div>
+        <div class="flex space-x-6 text-sm text-slate-500 dark:text-slate-400">
+          <a href="#home" class="hover:text-primary transition-colors">Home</a>
+          <a href="#about" class="hover:text-primary transition-colors"
+            >About</a
+          >
+          <a href="#projects" class="hover:text-primary transition-colors"
+            >Projects</a
+          >
+        </div>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
